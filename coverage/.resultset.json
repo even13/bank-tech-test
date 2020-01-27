@@ -41,8 +41,52 @@
         1,
         null,
         null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/operation_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/lib/operation.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/statement_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1580132758
+    "timestamp": 1580138208
   }
 }
