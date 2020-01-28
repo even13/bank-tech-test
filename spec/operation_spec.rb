@@ -2,22 +2,22 @@ require 'operation'
 require 'timecop'
 
 describe Operation do
+  describe "#entry" do
 
-  it "credits the user's account by 10" do
-    Timecop.freeze do
-      operation = Operation.new(10, 110)
-      expect(operation.amount).to eq 10
-      expect(operation.balance).to eq 110
-      expect(operation.date).to eq Time.now
+    it "adds a deposit to the log if the type is credit" do
+      Timecop.freeze do
+        operation = Operation.new
+        operation.entry(100, 1000, :credit)
+        expect(operation.log).to eq([["#{Time.now.strftime("%d/%m/%Y")}", "100.00", "", "1000.00"]])
+      end
     end
-  end
 
-  it "debits the user's account by 10" do
-    Timecop.freeze do
-      operation = Operation.new(-10, 90)
-      expect(operation.amount).to eq(-10)
-      expect(operation.balance).to eq 90
-      expect(operation.date).to eq Time.now
+    it "adds a withdrawal to the log if the type is debit" do
+      Timecop.freeze do
+        operation = Operation.new
+        operation.entry(100, 1000, :debit)
+        expect(operation.log).to eq([["#{Time.now.strftime("%d/%m/%Y")}", "", "100.00", "1000.00"]])
+      end
     end
   end
 end

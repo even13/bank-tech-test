@@ -21,6 +21,6 @@ describe Account do
     it "a client cannot withdraw if it will make the balance negative" do
       expect { account.withdraw(200) }.to raise_error("Insufficient funds for this operation")
     end
-
   end
+
 end
