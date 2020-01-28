@@ -12,7 +12,7 @@ class Statement
   end
 
   def print_statement
-    statement = @operations.log.map do |operation|
+    statement = @operations.log.reverse.map do |operation|
       operation.join(' || ')
     end
     (header + statement.join("\n")).gsub("||  ||", "|| ||")
