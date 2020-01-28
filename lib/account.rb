@@ -10,6 +10,6 @@ class Account
   end
 
   def withdraw(amount)
-    @balance -= amount
+    @balance - amount >= 0 ? @balance -= amount : raise("Insufficient funds for this operation")
   end
 end
