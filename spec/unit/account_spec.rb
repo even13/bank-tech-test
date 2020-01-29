@@ -2,10 +2,12 @@ require 'account'
 
 describe Account do
   let(:statement) { double :statement }
-  subject(:account) { Account.new(statement) }
+  let(:operation) { double :operation }
+  subject(:account) { Account.new(operation) }
 
   describe "#deposit" do
     it "a client should be able to deposit money" do
+      allow(operation).to receive(:entry).with(1000, 1000, :credit)
       account.deposit(1000)
       expect(account.balance).to eq 1000
     end
@@ -13,6 +15,8 @@ describe Account do
 
   describe "#withdraw" do
     it "a client should be able to withdraw money" do
+      allow(operation).to receive(:entry).with(1000, 1000, :credit)
+      allow(operation).to receive(:entry).with(500, 500, :debit)
       account.deposit(1000)
       account.withdraw(500)
       expect(account.balance).to eq 500

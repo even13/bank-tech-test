@@ -16,7 +16,15 @@ describe 'Bank account' do
 
   it "raises an error when trying to withdraw more than you have" do
     account_test.deposit(500)
-    expect{account_test.withdraw(1000)}.to raise_error("Insufficient funds for this operation")
+    expect { account_test.withdraw(1000) }.to raise_error("Insufficient funds for this operation")
   end
 
+  it "the statement is displayed with operations in the right order" do
+    Timecop.freeze do
+      account_test.deposit(1000)
+      account_test.deposit(2000)
+      account_test.withdraw(500)
+      expect(statement_test.print_statement).to eq("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 500.00 || 2500.00\n#{Time.now.strftime("%d/%m/%Y")} || 2000.00 || || 3000.00\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00")
+    end
+  end
 end
