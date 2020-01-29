@@ -6,14 +6,19 @@ class Statement
     @operations = operations
   end
 
-  def header
-    "date || credit || debit || balance\n"
-  end
+  def print_statement(history = @operations.log)
+    raise("No operations to display yet") unless history[0]
 
-  def print_statement
-    statement = @operations.log.reverse.map do |operation|
+    statement = history.reverse.map do |operation|
       operation.join(' || ')
     end
     (header + statement.join("\n")).gsub("||  ||", "|| ||")
   end
+
+  private
+
+  def header
+    "date || credit || debit || balance\n"
+  end
+
 end

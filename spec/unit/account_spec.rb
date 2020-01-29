@@ -27,4 +27,11 @@ describe Account do
     end
   end
 
+  describe "#statement" do
+    it "a client cannot print their account statement without operations" do
+      allow(operation).to receive(:log) { [] }
+      expect { account.statement }.to raise_error("No operations to display yet")
+    end
+  end
+
 end
