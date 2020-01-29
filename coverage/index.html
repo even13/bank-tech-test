@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-29T18:21:53+00:00">2020-01-29T18:21:53+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-29T18:28:59+00:00">2020-01-29T18:28:59+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.18
+         2.19
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>22</td>
         <td>22</td>
         <td>0</td>
-        <td>4.5</td>
+        <td>4.6</td>
       </tr>
       
       <tr>
@@ -306,8 +306,8 @@
           <code class="ruby">  def statement</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="27">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="27">
+          <span class="hits">5</span>
           
           <code class="ruby">    puts @statement.print_statement(history)</code>
         </li>
@@ -348,8 +348,8 @@
           <code class="ruby">  def history</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="34">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="34">
+          <span class="hits">5</span>
           
           <code class="ruby">    @operation.log</code>
         </li>
@@ -536,8 +536,8 @@
           <code class="ruby">  def initialize(operations = Operation.new)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="6">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
           <code class="ruby">    @operations = operations</code>
         </li>
@@ -699,8 +699,8 @@
           <code class="ruby">  let(:account_test) { Account.new(operation_test) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
           <code class="ruby">  let(:statement_test) { Statement.new(operation_test) }</code>
         </li>
@@ -825,10 +825,10 @@
           <code class="ruby">      account_test.withdraw(500)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
-          <code class="ruby">      expect(statement_test.print_statement).to eq(&quot;date || credit || debit || balance\n#{Time.now.strftime(&quot;%d/%m/%Y&quot;)} || || 500.00 || 2500.00\n#{Time.now.strftime(&quot;%d/%m/%Y&quot;)} || 2000.00 || || 3000.00\n#{Time.now.strftime(&quot;%d/%m/%Y&quot;)} || 1000.00 || || 1000.00&quot;)</code>
+          <code class="ruby">      expect { account_test.statement }.to output(&quot;date || credit || debit || balance\n#{Time.now.strftime(&quot;%d/%m/%Y&quot;)} || || 500.00 || 2500.00\n#{Time.now.strftime(&quot;%d/%m/%Y&quot;)} || 2000.00 || || 3000.00\n#{Time.now.strftime(&quot;%d/%m/%Y&quot;)} || 1000.00 || || 1000.00\n&quot;).to_stdout</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">

@@ -24,7 +24,7 @@ describe 'Bank account' do
       account_test.deposit(1000)
       account_test.deposit(2000)
       account_test.withdraw(500)
-      expect(statement_test.print_statement).to eq("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 500.00 || 2500.00\n#{Time.now.strftime("%d/%m/%Y")} || 2000.00 || || 3000.00\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00")
+      expect { account_test.statement }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 500.00 || 2500.00\n#{Time.now.strftime("%d/%m/%Y")} || 2000.00 || || 3000.00\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n").to_stdout
     end
   end
 end
