@@ -14,4 +14,9 @@ describe 'Bank account' do
     expect(account_test.withdraw(1000)).to eq 1000
   end
 
+  it "raises an error when trying to withdraw more than you have" do
+    account_test.deposit(500)
+    expect{account_test.withdraw(1000)}.to raise_error("Insufficient funds for this operation")
+  end
+
 end
