@@ -1,8 +1,9 @@
 # Bank Tech Test
 
-This is the first tech test taken on Week 10. 
-The test was about creating a bank account system that allows users to print their bank statement and to perform operations such as withdrawals and deposits (see the [Specification](#specification) below).
-
+This is the first tech test taken on Week 10.     
+The test was about creating a bank account system that allows users to print their bank statement and to perform operations such as withdrawals and deposits (see the [Specification](#specification) below).    
+I started off by writing [User Stories](#stories) for this exercise and by diagramming everything. However, this ended up changing while doing the project. I thought about the features I wanted to implement based on the user stories that I had written. Then I set up RSpec for testing, Simplecov for test coverage and rubocop as a linter.     
+I made three classes, one that represents the account, one about operations (that adds the operations to a log) and one that represents the statement.
 
 ## Get started
 
