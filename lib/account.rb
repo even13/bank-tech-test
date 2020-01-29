@@ -2,7 +2,6 @@ require_relative 'operation'
 require_relative 'statement'
 
 class Account
-  attr_reader :balance
 
   def initialize(operation = Operation.new, statement = Statement.new)
     @balance = 0
@@ -18,7 +17,7 @@ class Account
 
   def withdraw(amount)
     raise("Insufficient funds for this operation") unless @balance - amount >= 0
-    
+
     @balance -= amount
     @operation.entry(amount, @balance, :debit)
     @balance
@@ -29,6 +28,7 @@ class Account
   end
 
   private
+  attr_reader :balance
 
   def history
     @operation.log
