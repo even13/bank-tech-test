@@ -1,7 +1,22 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/account_spec.rb": [
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/feature/bank_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/unit/account_spec.rb": [
         1,
         null,
         1,
@@ -37,12 +52,12 @@
         1,
         null,
         1,
-        3,
-        3,
+        4,
+        4,
         null,
         null,
         1,
-        2,
+        3,
         null,
         null,
         1,
@@ -56,7 +71,7 @@
         1,
         null,
         1,
-        2,
+        3,
         null,
         null,
         1,
@@ -90,7 +105,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/operation_spec.rb": [
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/unit/operation_spec.rb": [
         1,
         1,
         null,
@@ -115,7 +130,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/statement_spec.rb": [
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/spec/unit/statement_spec.rb": [
         1,
         1,
         null,
@@ -148,6 +163,6 @@
         null
       ]
     },
-    "timestamp": 1580291285
+    "timestamp": 1580291649
   }
 }
