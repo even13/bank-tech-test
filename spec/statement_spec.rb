@@ -3,13 +3,14 @@ require 'timecop'
 
 describe Statement do
   let(:operation) { double :operation }
-  let(:account) { double "account" }
   subject(:statement) { described_class.new }
 
   context "display client statement" do
     describe "#header" do
       it "shows only the header if no operations yet" do
-        expect(statement.header).to eq "date || credit || debit || balance\n"
+        allow(operation).to receive(:log) { [] }
+        statement = Statement.new(operation)
+        expect(statement.print_statement).to eq "date || credit || debit || balance\n"
       end
     end
 

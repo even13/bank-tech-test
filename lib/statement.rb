@@ -1,7 +1,6 @@
 require_relative 'operation'
 
 class Statement
-  attr_reader :record
 
   def initialize(operations = Operation.new)
     @operations = operations
