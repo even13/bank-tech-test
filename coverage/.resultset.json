@@ -5,7 +5,7 @@
         1,
         null,
         1,
-        1,
+        4,
         4,
         null,
         1,
@@ -31,7 +31,7 @@
       ],
       "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/lib/account.rb": [
         1,
-        null,
+        1,
         null,
         1,
         1,
@@ -56,7 +56,7 @@
         1,
         null,
         1,
-        5,
+        2,
         null,
         null,
         1,
@@ -66,6 +66,27 @@
         1,
         null,
         null,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/lib/statement.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        3,
+        null,
+        2,
         null,
         null
       ],
@@ -125,29 +146,8 @@
         null,
         null,
         null
-      ],
-      "/Users/student/Documents/Eve/Projects/Week_10/bank-tech-test/lib/statement.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        5,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        2,
-        3,
-        null,
-        2,
-        null,
-        null
       ]
     },
-    "timestamp": 1580290804
+    "timestamp": 1580291285
   }
 }

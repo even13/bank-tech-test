@@ -3,7 +3,7 @@ require 'timecop'
 
 describe Statement do
   let(:operation) { double :operation }
-  subject(:statement) { described_class.new }
+  subject(:statement) { Statement.new(operation) }
 
   context "display client statement" do
     describe "#header" do

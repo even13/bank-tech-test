@@ -2,7 +2,7 @@ require 'account'
 
 describe Account do
   let(:statement) { double :statement }
-  subject(:account) { described_class.new }
+  subject(:account) { Account.new(statement) }
 
   describe "#deposit" do
     it "a client should be able to deposit money" do
