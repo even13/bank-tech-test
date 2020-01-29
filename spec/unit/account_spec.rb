@@ -7,26 +7,24 @@ describe Account do
   subject(:account) { Account.new(operation, statement) }
 
   describe "#deposit" do
+
     it "a client should be able to deposit money" do
       allow(operation).to receive(:log) { [[Time.now.strftime("%d/%m/%Y"), "1000.00", '', "1000.00"]] }
       allow(statement).to receive(:print_statement) { "date || credit || debit || balance\n" + "#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n" }
       allow(operation).to receive(:entry).with(1000, 1000, :credit)
-      account.deposit(1000)
-      expect { account.statement }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n").to_stdout
+      expect(account.deposit(1000)).to be(1000)
     end
   end
 
   describe "#withdraw" do
+
     it "a client should be able to withdraw money" do
-      Timecop.freeze do
-        allow(operation).to receive(:log) { [[Time.now.strftime("%d/%m/%Y"), "1000.00", '', "1000.00"], [Time.now.strftime("%d/%m/%Y"), '', "300.00", "700.00"]] }
-        allow(statement).to receive(:print_statement) { "date || credit || debit || balance\n" + "#{Time.now.strftime("%d/%m/%Y")} || || 300.00 || 700.00\n" + "#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n" }
-        allow(operation).to receive(:entry).with(1000, 1000, :credit)
-        allow(operation).to receive(:entry).with(200, 800, :debit)
-        account.deposit(1000)
-        account.withdraw(200)
-        expect { account.statement }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 300.00 || 700.00\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n").to_stdout
-      end
+      allow(operation).to receive(:log) { [[Time.now.strftime("%d/%m/%Y"), "1000.00", '', "1000.00"], [Time.now.strftime("%d/%m/%Y"), '', "300.00", "700.00"]] }
+      allow(statement).to receive(:print_statement) { "date || credit || debit || balance\n" + "#{Time.now.strftime("%d/%m/%Y")} || || 300.00 || 700.00\n" + "#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n" }
+      allow(operation).to receive(:entry).with(1000, 1000, :credit)
+      allow(operation).to receive(:entry).with(200, 800, :debit)
+      account.deposit(1000)
+      expect(account.withdraw(200)).to be(800)
     end
 
     it "a client cannot withdraw if it will make the balance negative" do
@@ -41,6 +39,16 @@ describe Account do
       expect { account.statement }.to raise_error("No operations to display yet")
     end
 
+    it "a client sees their deposit on their statement" do
+      Timecop.freeze do
+        allow(operation).to receive(:log) { [[Time.now.strftime("%d/%m/%Y"), "1000.00", '', "1000.00"]] }
+        allow(statement).to receive(:print_statement) { "date || credit || debit || balance\n" + "#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n" }
+        allow(operation).to receive(:entry).with(1000, 1000, :credit)
+        account.deposit(1000)
+        expect { account.statement }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n").to_stdout
+      end
+    end
+
     it "a client will see their operations displayed on the statement" do
       Timecop.freeze do
         allow(operation).to receive(:log) { [[Time.now.strftime("%d/%m/%Y"), "1000.00", '', "1000.00"]] }
@@ -48,6 +56,18 @@ describe Account do
         allow(operation).to receive(:entry).with(1000, 1000, :credit)
         account.deposit(1000)
         expect { account.statement }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n").to_stdout
+      end
+    end
+
+    it "a client sees their withdrawal on their statement" do
+      Timecop.freeze do
+        allow(operation).to receive(:log) { [[Time.now.strftime("%d/%m/%Y"), "1000.00", '', "1000.00"], [Time.now.strftime("%d/%m/%Y"), '', "300.00", "700.00"]] }
+        allow(statement).to receive(:print_statement) { "date || credit || debit || balance\n" + "#{Time.now.strftime("%d/%m/%Y")} || || 300.00 || 700.00\n" + "#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n" }
+        allow(operation).to receive(:entry).with(1000, 1000, :credit)
+        allow(operation).to receive(:entry).with(200, 800, :debit)
+        account.deposit(1000)
+        account.withdraw(200)
+        expect { account.statement }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 300.00 || 700.00\n#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00\n").to_stdout
       end
     end
   end
