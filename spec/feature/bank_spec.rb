@@ -9,4 +9,9 @@ describe 'Bank account' do
     expect(account_test.deposit(1000)).to eq 1000
   end
 
+  it "returns a balance of 1000 for a deposit of 2000 followed by a withdrawal of 1000" do
+    account_test.deposit(2000)
+    expect(account_test.withdraw(1000)).to eq 1000
+  end
+
 end
