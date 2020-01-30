@@ -1,6 +1,7 @@
 class Operation
 
   attr_reader :log
+  DATE = Time.now.strftime("%d/%m/%Y")
 
   def initialize
     @log = []
@@ -8,9 +9,9 @@ class Operation
 
   def entry(amount, balance, type)
     if type == :credit
-      @log << [Time.now.strftime("%d/%m/%Y"), sprintf('%.2f', amount), '', sprintf('%.2f', balance)]
+      @log << [DATE, sprintf('%.2f', amount), '', sprintf('%.2f', balance)]
     else
-      @log << [Time.now.strftime("%d/%m/%Y"), '', sprintf('%.2f', amount), sprintf('%.2f', balance)]
+      @log << [DATE, '', sprintf('%.2f', amount), sprintf('%.2f', balance)]
     end
   end
 
