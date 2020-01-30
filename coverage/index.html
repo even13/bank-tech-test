@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-30T09:19:44+00:00">2020-01-30T09:19:44+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-30T11:11:05+00:00">2020-01-30T11:11:05+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.34
+         2.35
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>7</b> files in total.
-    <b>140</b> relevant lines. 
-    <span class="green"><b>140</b> lines covered</span> and
+    <b>138</b> relevant lines. 
+    <span class="green"><b>138</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -113,9 +113,9 @@
       <tr>
         <td class="strong"><a href="#faa589d1e510425c96b0fc0d563521d1aa6e6261" class="src_link" title="spec/unit/statement_spec.rb">spec/unit/statement_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>30</td>
-        <td>16</td>
-        <td>16</td>
+        <td>26</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -967,13 +967,13 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow(operation).to receive(:log) { [[Operation::DATE, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;]] }</code>
+          <code class="ruby">      allow(operation).to receive(:log) { [[&quot;30/01/2020&quot;, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;]] }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;#{Operation::DATE} || 1000.00 || || 1000.00\n&quot; }</code>
+          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;30/01/2020 || 1000.00 || || 1000.00\n&quot; }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
@@ -1027,13 +1027,13 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow(operation).to receive(:log) { [[Operation::DATE, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;], [Operation::DATE, &#39;&#39;, &quot;300.00&quot;, &quot;700.00&quot;]] }</code>
+          <code class="ruby">      allow(operation).to receive(:log) { [[&quot;30/01/2020&quot;, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;], [&quot;30/01/2020&quot;, &#39;&#39;, &quot;300.00&quot;, &quot;700.00&quot;]] }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;#{Operation::DATE} || || 300.00 || 700.00\n&quot; + &quot;#{Operation::DATE} || 1000.00 || || 1000.00\n&quot; }</code>
+          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;30/01/2020 || || 300.00 || 700.00\n&quot; + &quot;30/01/2020 || 1000.00 || || 1000.00\n&quot; }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="27">
@@ -1153,13 +1153,13 @@
         <li class="covered" data-hits="2" data-linenumber="46">
           <span class="hits">2</span>
           
-          <code class="ruby">      allow(operation).to receive(:log) { [[Operation::DATE, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;]] }</code>
+          <code class="ruby">      allow(operation).to receive(:log) { [[&quot;30/01/2020&quot;, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;]] }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="47">
           <span class="hits">2</span>
           
-          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;#{Operation::DATE} || 1000.00 || || 1000.00\n&quot; }</code>
+          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;30/01/2020 || 1000.00 || || 1000.00\n&quot; }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="48">
@@ -1177,7 +1177,7 @@
         <li class="covered" data-hits="2" data-linenumber="50">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect { account.statement }.to output(&quot;date || credit || debit || balance\n#{Operation::DATE} || 1000.00 || || 1000.00\n&quot;).to_stdout</code>
+          <code class="ruby">      expect { account.statement }.to output(&quot;date || credit || debit || balance\n30/01/2020 || 1000.00 || || 1000.00\n&quot;).to_stdout</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
@@ -1201,13 +1201,13 @@
         <li class="covered" data-hits="2" data-linenumber="54">
           <span class="hits">2</span>
           
-          <code class="ruby">      allow(operation).to receive(:log) { [[Operation::DATE, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;]] }</code>
+          <code class="ruby">      allow(operation).to receive(:log) { [[&quot;30/01/2020&quot;, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;]] }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="55">
           <span class="hits">2</span>
           
-          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;#{Operation::DATE} || 1000.00 || || 1000.00\n&quot; }</code>
+          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;30/01/2020 || 1000.00 || || 1000.00\n&quot; }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="56">
@@ -1225,7 +1225,7 @@
         <li class="covered" data-hits="2" data-linenumber="58">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect { account.statement }.to output(&quot;date || credit || debit || balance\n#{Operation::DATE} || 1000.00 || || 1000.00\n&quot;).to_stdout</code>
+          <code class="ruby">      expect { account.statement }.to output(&quot;date || credit || debit || balance\n30/01/2020 || 1000.00 || || 1000.00\n&quot;).to_stdout</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
@@ -1249,13 +1249,13 @@
         <li class="covered" data-hits="2" data-linenumber="62">
           <span class="hits">2</span>
           
-          <code class="ruby">      allow(operation).to receive(:log) { [[Operation::DATE, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;], [Operation::DATE, &#39;&#39;, &quot;300.00&quot;, &quot;700.00&quot;]] }</code>
+          <code class="ruby">      allow(operation).to receive(:log) { [[&quot;30/01/2020&quot;, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;], [&quot;31/01/2020&quot;, &#39;&#39;, &quot;300.00&quot;, &quot;700.00&quot;]] }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="63">
           <span class="hits">2</span>
           
-          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;#{Operation::DATE} || || 300.00 || 700.00\n&quot; + &quot;#{Operation::DATE} || 1000.00 || || 1000.00\n&quot; }</code>
+          <code class="ruby">      allow(statement).to receive(:print_statement) { &quot;date || credit || debit || balance\n&quot; + &quot;31/01/2020 || || 300.00 || 700.00\n&quot; + &quot;30/01/2020 || 1000.00 || || 1000.00\n&quot; }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="64">
@@ -1285,7 +1285,7 @@
         <li class="covered" data-hits="2" data-linenumber="68">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect { account.statement }.to output(&quot;date || credit || debit || balance\n#{Operation::DATE} || || 300.00 || 700.00\n#{Operation::DATE} || 1000.00 || || 1000.00\n&quot;).to_stdout</code>
+          <code class="ruby">      expect { account.statement }.to output(&quot;date || credit || debit || balance\n31/01/2020 || || 300.00 || 700.00\n30/01/2020 || 1000.00 || || 1000.00\n&quot;).to_stdout</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
@@ -1473,8 +1473,8 @@
     <h3>spec/unit/statement_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1521,142 +1521,118 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  before do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    stub_const(&quot;Operation::DATE&quot;, &quot;#{Time.now.strftime(&quot;%d/%m/%Y&quot;)}&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
-          
           <code class="ruby">  context &quot;display client statement&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">    describe &quot;print_statement&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">      it &quot;shows operations under the header in reverse chronological order&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
+        <li class="covered" data-hits="2" data-linenumber="11">
           <span class="hits">2</span>
           
-          <code class="ruby">        allow(operation).to receive(:log) { [[&quot;#{Operation::DATE}&quot;, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;],</code>
+          <code class="ruby">        allow(operation).to receive(:log) { [[&quot;30/01/2020&quot;, &quot;1000.00&quot;, &#39;&#39;, &quot;1000.00&quot;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">                                           [&quot;#{Operation::DATE}&quot;, &quot;2000.00&quot;, &#39;&#39;, &quot;3000.00&quot;],</code>
+          <code class="ruby">                                           [&quot;30/01/2020&quot;, &quot;2000.00&quot;, &#39;&#39;, &quot;3000.00&quot;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">                                           [&quot;#{Operation::DATE}&quot;, &quot;&quot;, &quot;500.00&quot;, &quot;2500.00&quot;]]</code>
+          <code class="ruby">                                           [&quot;30/01/2020&quot;, &quot;&quot;, &quot;500.00&quot;, &quot;2500.00&quot;]]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">        }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">        statement = Statement.new(operation)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(statement.print_statement).to eq(&quot;date || credit || debit || balance\n#{Operation::DATE} || || 500.00 || 2500.00\n#{Operation::DATE} || 2000.00 || || 3000.00\n#{Operation::DATE} || 1000.00 || || 1000.00&quot;)</code>
+          <code class="ruby">        expect(statement.print_statement).to eq(&quot;date || credit || debit || balance\n30/01/2020 || || 500.00 || 2500.00\n30/01/2020 || 2000.00 || || 3000.00\n30/01/2020 || 1000.00 || || 1000.00&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">      it &quot;will not allow printing the statement unless there are operations to show&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
+        <li class="covered" data-hits="2" data-linenumber="20">
           <span class="hits">2</span>
           
           <code class="ruby">        allow(operation).to receive(:log) { [] }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">        statement = Statement.new(operation)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
+        <li class="covered" data-hits="2" data-linenumber="22">
           <span class="hits">2</span>
           
           <code class="ruby">        expect { statement.print_statement }.to raise_error(&quot;No operations to display yet&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">end</code>
